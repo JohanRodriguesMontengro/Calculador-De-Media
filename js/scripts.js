@@ -75,7 +75,17 @@ while (continuar == true) {
           verificadorPainel1 = `N`
         }
       }
-      let notaProva = prompt(`Informe a sua nota`)
+      let notaProva = prompt(`Informe a sua nota entre 0 e 10`)
+      let notaProva2 = prompt(`Informe a sua nota entre 0 e 10`)
+      let outros = prompt(`Informe a sua nota entre 0 e 10`)
+      if (isNaN(notaProva) || isNaN(notaProva2) || isNaN(outros) ||
+        notaProva >= 11 || notaProva <= -1 || notaProva2 >= 11 ||
+          notaProva2 <= -1 || outros >= 11 || outros <= -1) {
+        let soma = (parseFloat(notaProva) + parseFloat(notaProva2) + parseFloat(outros)) / 3
+        soma = soma.toFixed(2)
+        
+        alert(`A sua média de ${materiaEscolhida} foi de: ${soma}`)
+        }
     }
   }
 }
