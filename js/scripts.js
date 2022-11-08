@@ -1,3 +1,5 @@
+
+// Forma antiga
 // let Continuar = true;
 
 // while (Continuar == true) {
@@ -59,6 +61,8 @@
 //     }
 //   }
 // }
+
+// Forma Nova
 let Repetidor = false;
 let NomeAluno = ``;
 let RepetidorGlobal = true
@@ -69,6 +73,7 @@ do {
   if (Confirm === true) {
     alert(`Agradecemos a confirmação :)`);
     Repetidor = true;
+    RepetidorGlobal = false
   } else {
     alert(`Redirecionaremos o senhor para a tela anterior`);
   }
@@ -142,6 +147,9 @@ do {
         alert(`O aluno: ${NomeAluno} Somente com milagre divino pode passar de ano, com a média de: ${Soma}.
         E está devendo: ${DiferençaDeNota} pontos`)
       }
+    } else if (PainelDeControle === `2`) {
+      alert(`Voltando...`)
+      Repetidor = false
     }
-  } while (Repetidor === true);
+  } while (Repetidor === true); c
 } while (RepetidorGlobal === true);
