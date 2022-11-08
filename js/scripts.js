@@ -59,41 +59,89 @@
 //     }
 //   }
 // }
-let Repetidor = false
-let NomeAluno = ``
+let Repetidor = false;
+let NomeAluno = ``;
+let RepetidorGlobal = true
 do {
-  NomeAluno = prompt(`Informe o nome do aluno`)
-  let Confirm = confirm(`Deseja confirmar o nome do aluno?`)
-  
+  NomeAluno = prompt(`Informe o nome do aluno`);
+  let Confirm = confirm(`Deseja confirmar o nome do aluno?`);
+
   if (Confirm === true) {
-    alert(`Agradecemos a confirmação :)`)
-    Repetidor = true
+    alert(`Agradecemos a confirmação :)`);
+    Repetidor = true;
   } else {
-    alert(`Redirecionaremos o senhor para a tela anterior`)
+    alert(`Redirecionaremos o senhor para a tela anterior`);
   }
 
   do {
+    let Soma = 0
+    let DiferençaDeNota = 0
     let PainelDeControle = prompt(`Escolha uma opção abaixo
     1- Calcular Média
-    Nome do aluno: ${NomeAluno}`)
+    2- Sair
+    Nome do aluno: ${NomeAluno}`);
 
+    if (
+      isNaN(PainelDeControle) ||
+      PainelDeControle >= `3` ||
+      PainelDeControle <= `0`
+    ) {
+      alert(`Digite somente números entre 1 a 2`);
+    } else if (PainelDeControle === `1`) {
+      let Notas = {
+        NotaAluno1: prompt(`Informe a 1º nota do aluno`),
+        NotaAluno2: prompt(`Informe a 2º nota do aluno`),
+        NotaAluno3: prompt(`Informe a 3º nota do aluno`),
+        NotaAluno4: prompt(`Informe a 4º nota do aluno`),
+        NotaAluno5: prompt(`Informe a 5º nota do aluno`),
+        NotaAluno6: prompt(`Informe a 6º nota do aluno`),
+        NotaAluno7: prompt(`Informe a 7º nota do aluno`),
+        NotaAluno8: prompt(`Informe a 8º nota do aluno`),
+        NotaAluno9: prompt(`Informe a 9º nota do aluno`),
+        NotaAluno10: prompt(`Informe a 10º nota do aluno`),
+      };
+      Notas;
 
-    if (isNaN(PainelDeControle) || PainelDeControle >= `3` || PainelDeControle <= `0`) {
-      alert(`Digite somente números entre 1 a 2`)
+      if (isNaN(Notas)) {
+        alert(`Digite somente números`);
+      } else {
+        Soma.toFixed(2) = (parseFloat(Notas.NotaAluno1) +
+        parseFloat(Notas.NotaAluno2) +
+        parseFloat(Notas.NotaAluno3) +
+        parseFloat(Notas.NotaAluno4) +
+        parseFloat(Notas.NotaAluno5) +
+        parseFloat(Notas.NotaAluno6) +
+        parseFloat(Notas.NotaAluno7) +
+        parseFloat(Notas.NotaAluno8) +
+        parseFloat(Notas.NotaAluno9) +
+        parseFloat(Notas.NotaAluno10)) / 10;
+        
+        DiferençaDeNota = Soma - DiferençaDeNota
+      }
+      if (Soma >= 9) {
+        alert(`O aluno: ${NomeAluno} foi muito bem e conseguiu passar de ano, com a média de: ${Soma}.
+        E está devendo: ${DiferençaDeNota} pontos`)
+      }
+      else if (Soma >= 7) {
+        alert(`O aluno: ${NomeAluno} foi bem passar de ano e conseguiu passar de ano, com a média de: ${Soma}.
+        E está devendo: ${DiferençaDeNota} pontos`)
+      }
+      else if (Soma >= 6) {
+        alert(`O aluno: ${NomeAluno} conseguiu passar de ano, com a média de: ${Soma}.
+        E está devendo: ${DiferençaDeNota} pontos`)
+      }
+      else if (Soma >= 3.7) {
+        alert(`O aluno: ${NomeAluno} ainda pode passar de ano, com a média de: ${Soma}.
+        E está devendo: ${DiferençaDeNota} pontos`)
+      }
+      else if (Soma >= 1.2) {
+        alert(`O aluno: ${NomeAluno} com muita sorte ainda pode passar de ano, com a média de: ${Soma}.
+        E está devendo: ${DiferençaDeNota} pontos`)
+      }
+      else if (Soma >= 0) {
+        alert(`O aluno: ${NomeAluno} Somente com milagre divino pode passar de ano, com a média de: ${Soma}.
+        E está devendo: ${DiferençaDeNota} pontos`)
+      }
     }
-    else if(PainelDeControle === `1`) {
-
-
-
-
-
-
-
-
-
-
-
-      
-    }
-  }while(Repetidor === true) 
-}while(RepetidorNomeAluno === true)
+  } while (Repetidor === true);
+} while (RepetidorGlobal === true);

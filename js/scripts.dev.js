@@ -57,6 +57,7 @@
 // }
 var Repetidor = false;
 var NomeAluno = "";
+var RepetidorGlobal = true;
 
 do {
   NomeAluno = prompt("Informe o nome do aluno");
@@ -70,10 +71,33 @@ do {
   }
 
   do {
-    var PainelDeControle = prompt("Escolha uma op\xE7\xE3o abaixo\n    1- Calcular M\xE9dia\n    Nome do aluno: ".concat(NomeAluno));
+    var Soma = 0;
+    var PainelDeControle = prompt("Escolha uma op\xE7\xE3o abaixo\n    1- Calcular M\xE9dia\n    2- Sair\n    Nome do aluno: ".concat(NomeAluno));
 
     if (isNaN(PainelDeControle) || PainelDeControle >= "3" || PainelDeControle <= "0") {
       alert("Digite somente n\xFAmeros entre 1 a 2");
-    } else if (PainelDeControle === "1") {}
+    } else if (PainelDeControle === "1") {
+      var Notas = {
+        NotaAluno1: prompt("Informe a 1\xBA nota do aluno"),
+        NotaAluno2: prompt("Informe a 2\xBA nota do aluno"),
+        NotaAluno3: prompt("Informe a 3\xBA nota do aluno"),
+        NotaAluno4: prompt("Informe a 4\xBA nota do aluno"),
+        NotaAluno5: prompt("Informe a 5\xBA nota do aluno"),
+        NotaAluno6: prompt("Informe a 6\xBA nota do aluno"),
+        NotaAluno7: prompt("Informe a 7\xBA nota do aluno"),
+        NotaAluno8: prompt("Informe a 8\xBA nota do aluno"),
+        NotaAluno9: prompt("Informe a 9\xBA nota do aluno"),
+        NotaAluno10: prompt("Informe a 10\xBA nota do aluno")
+      };
+      Notas;
+
+      if (isNaN(Notas)) {
+        alert("Digite somente n\xFAmeros");
+      } else {
+        Soma = (parseInt(Notas.NotaAluno1) + parseInt(Notas.NotaAluno2) + parseInt(Notas.NotaAluno3) + parseInt(Notas.NotaAluno4) + parseInt(Notas.NotaAluno5) + parseInt(Notas.NotaAluno6) + parseInt(Notas.NotaAluno7) + parseInt(Notas.NotaAluno8) + parseInt(Notas.NotaAluno9) + parseInt(Notas.NotaAluno10)) / 10;
+      }
+
+      alert("A m\xE9dia do ");
+    }
   } while (Repetidor === true);
-} while (RepetidorNomeAluno === true);
+} while (RepetidorGlobal === true);
